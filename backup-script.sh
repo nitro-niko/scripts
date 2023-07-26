@@ -11,7 +11,7 @@ PKGVER=`dnf list installed | grep -i gitlab | awk '{print $2}'`
 PKGDIR=/etc/service                 # Location of what you are backing up
 SERVICEBACKUPS=/etc/service/backup  # Location of the backups if your service has a backup command
 BACKUPDIR=/opt/backup/service       # Location of where the backup files will be located
-BACKUPDATE=`date '+%F'`
+BACKUPDATE=`date '+%Y%m%d-%H%M%S'`
 
 # Remove older than 3 backups and wait a minute
 find $BACKUPDIR -type f -ctime +2 -exec rm -f {} \;
